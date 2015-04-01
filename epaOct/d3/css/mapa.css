@@ -1,0 +1,299 @@
+/* Author(s) = Manuel Maroto (@manuelgmaroto), Luis Sevillano (@SepirData)
+ * Date: 2014 Sept
+ */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+b{font-weight: bold;font-size: 1em;}
+i{font-style: italic;}
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    color: #777;
+}
+#wrapper{
+    width: 990px;
+    font-size: 1em;
+    margin: 10px;
+}
+div.tooltip{
+    position: absolute;
+    text-align: left;
+    width: 130px;
+    height: 40px;
+    font: 13px sans-serif;
+    background: white;
+    border: 1px solid #ddd;
+    pointer-events: none;
+    line-height: 14px;
+    z-index: 2;
+    padding: 10px;
+    opacity: 0;
+}
+
+.area{
+    fill: #C6DBEF;
+}
+
+.rangoFechas{
+    color: #555;
+    font-size: 12px;
+}
+.rangoFechas i{
+    font-size: 14px;
+}
+b{
+    font-size: 1.5em;
+}
+#mes{
+    width: 10em;
+}
+#mes i{
+    font-size: 14px;
+    color: #555;
+}
+.path:hover{
+    opacity: 0.8;
+
+}
+
+div b{
+    font-size: 14px;
+}
+
+/*Estilos para chrome del slider*/
+input[type='range'] {
+    -webkit-appearance: none !important;
+    background:#777;
+
+    margin: 15px 5px 10px 5px;
+    height:5px;
+    width: 930px;
+}
+input[type='range']:focus {
+    outline: 0;
+}
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background:#fff;
+    height:20px;
+    width:20px;
+    border-radius: 20px;
+    border: 1px solid #777;
+}
+input[type='range']::-webkit-slider-thumb:focus {
+    outline: 0;
+}
+/*Estilos para firefox del slider*/
+input[type='range']::-moz-range-thumb{
+    background:#fff;
+    height:20px;
+    width:20px;
+    border-radius: 20px;
+
+}
+input[type='range']::-moz-range-thumb:focus{
+    outline: 0;
+}
+
+input[type='range']::-moz-range-track:focus{
+    outline:0;
+}
+input[type='range']::-moz-range-track{
+    background:#777;
+    height:5px;
+    width: 930px;
+
+}
+
+
+/* Estilos slider para IE */
+input[type=range]::-ms-track {
+    position: absolute;
+    width: 300px;
+    height:10px;
+
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
+
+    /*remove default tick marks*/
+    color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+    background: #777;
+    border-radius: 10px;
+}
+input[type=range]::-ms-fill-upper {
+    background: #ddd;
+    border-radius: 10px;
+}
+input[type=range]::-ms-thumb {
+    border:1px solid #777;    
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #fff;
+}
+input[type=range]:focus::-ms-fill-lower {
+    background: #888;
+}
+input[type=range]:focus::-ms-fill-upper {
+    background: #ccc;
+} 
+
+#cajaDatos{
+    float: left;
+    width: 390px;
+}
+#tasa{
+    font-size: 20px;
+    float:left;
+    height: 10px;
+    width: 200px;
+    padding: 50px 0 0 0;
+
+}
+#tasa-parados{
+    //float:left;
+}
+#year{
+    float:left;
+    font-size: 3em;
+    padding: 10px 0;
+    width: 300px;
+    border-bottom: #777 1px solid;
+}
+
+#maxMin{    
+    float: left;
+    width: 250px;
+
+    //border: solid 2px graytext;
+
+}
+#mediaParo{
+    margin-top: 20px;
+    float: left;
+    width: 300px;
+    font-size: 2em;
+}
+
+.mediaNacional{
+    margin-bottom: 20px;
+    border-bottom: solid 1px #777;
+    width: 300px;
+}
+#maximoParo{
+    font-size: 2em;
+    padding-top: 20px;
+    float:right;
+}
+#minimoParo{
+    margin-top: 20px;
+    float:right;
+
+    font-size: 2em;
+}
+#icono{
+    float: left;
+}
+.iconoMaximo{
+    height: 40px;
+    width: 40px;
+    float: right;
+    margin: 20px 10px 0 0;
+    background: url(../img/iconos.png)-99px 100px;
+}
+
+.iconoMinimo{
+    height: 40px;
+    width: 40px;
+    background: url(../img/iconos.png)-178px 100px;
+    float: right;
+    margin: 20px 10px 0 0;
+}
+.mano{
+    width: 40px;
+    height: 40px;
+    background: url(../img/iconos.png)-250px 100px;
+    float:left
+}
+#control{
+    margin-top: 10px; 
+    float: right;
+}
+.inicio{
+    float: left;
+    font-size: .7em;
+}
+.final{
+    float:right;
+    font-size: .7em;
+}
+#leyenda{
+    display: inline-block;
+    width: 350px;
+    height: 40px;
+    font-size: .9em;
+    text-align:center;
+    padding: 10px 10px 10px 0;
+    margin-top: 80px;
+}
+.masCinco{
+    float: left;
+    background-color: #ECC5B4;
+    width: 70px;
+    height: 20px;
+}
+.masQuince{
+    float: left;
+    background-color: #E3A78F;
+    width: 70px;
+    height: 20px;
+}
+.masVeinticinco{
+    float: left;
+    background-color: #D9886C ;
+    width: 70px;
+    height: 20px;
+}
+.masTreintaYCinco{
+    float: left;
+    background-color: #D0694C;
+    width: 70px;
+    height: 20px;
+}
+.masCuarenta{
+    float: left;
+    background-color: #A55036;
+    width: 70px;
+    height: 20px;
+}
+.textoLeyenda{
+    float: left;
+    padding: 5px 17px;
+}//fin estilos leyenda
+div.datosMapa{
+    overflow: hidden;
+}
+#mapas{
+    float: right;
+    width: 600px;
+    height: 500px;
+    margin: 20px 0 20px 0;    
+}
+#canarias {
+    //float: right;
+    height: 100px;
+    width: 260px;
+    top: -110px;
+    left: 345px;
+    position: relative;
+    border-top: solid 1px graytext;
+    border-left: solid 1px graytext;
+    border-radius: 30px 0;
+}
+
+

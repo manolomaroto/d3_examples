@@ -1,0 +1,285 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+b{font-weight: bold;font-size: 1em;}
+i{font-style: italic;}
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    color: #777;
+}
+#wrapper{
+    width: 985px;
+    font-size: 1em;
+    margin: 10px;
+    overflow: hidden;
+}
+table{
+    width: 985px;
+
+}
+.selectores{
+    line-height: 10px;
+    width: 985px;
+}
+.selectores span{
+    float: left;
+
+}
+
+.partido{
+    float: left;
+    padding: 10px;
+
+}
+.partido select{
+    width: 130px;
+}
+.partido span{
+    padding: 10px;
+}
+.caso{
+    float: left;
+    padding: 10px;
+}
+.caso select{
+    width: 130px;
+}
+.caso span{
+    padding: 10px;
+}
+.categoria{
+    float: left;
+    padding: 10px;
+}
+.categoria select{
+    width: 130px;
+}
+.categoria span{
+    padding: 10px;
+}
+.buscador{
+    float: left;
+    padding: 10px;
+}
+.buscador input[type='text']{
+    max-width: 130px;
+    float: left;
+}
+.buscador span{
+    padding: 10px;
+}
+
+.span12 span{
+    float: left;
+}
+img title{
+    max-width: 100px;
+    padding: 5px;
+}
+td img{
+    max-width: 21px;
+    padding-left: 3px;
+    cursor: pointer;
+    float: right;
+}
+td:first-child{
+    width: 95px;
+}
+td:nth-child(2) {
+    width: 120px;
+}
+td:nth-child(3) {
+    width: 100px;
+}
+td:nth-child(4) {
+    width: 190px;
+}
+td:nth-child(5) {
+    width: 165px;
+}
+td:nth-child(6) {
+    width: 120px;
+}
+/* --------------------------- */
+th:first-child{
+    width: 95px;
+}
+th:nth-child(2) {
+    width: 120px;
+}
+th:nth-child(3) {
+    width: 100px;
+}
+th:nth-child(4) {
+    width: 190px;
+}
+th:nth-child(5) {
+    width: 165px;
+}
+th:nth-child(6) {
+    width: 120px;
+}
+.hidden{
+    display: none;
+}
+div.tooltip{
+    position: absolute;
+    text-align: left;
+    width: 140px;
+    height: auto;
+    padding: 5px;
+    font: 13px sans-serif;
+    background: white;
+    border: 1px solid #ddd;
+    pointer-events: none;
+    line-height: 14px;
+    z-index: 2;
+    padding: 10px;
+    opacity: 0;
+}
+#datos{
+    float: left;
+    width: 200px;
+    height: 450px;
+    font-size: 2em;
+    padding-left: 35px;
+    
+
+}
+#datos h3{
+   color: #3D82A3;
+}
+
+#mapas{ 
+    float: left;
+    width: 660px;
+    height: 450px;
+    padding-top: 10px;
+}
+path:hover{
+    cursor: pointer;
+    opacity: .95;
+}
+#mapa{
+    float: right;
+}
+#canarias {
+    top: -85px;
+    float: right;
+    height: 80px;
+    width: 190px;
+    /* top: -85px;
+    left: 290px; */
+    position: relative;
+    z-index: 1;
+    border-top: solid 1px graytext;
+    border-left: solid 1px graytext;
+    border-radius: 25px 0;
+}
+
+#cajaTotal{
+    float: left;
+    padding: 20px;
+    width: 200px;
+}
+#cajaTotal img{
+    padding: 0 0 5px 4px;
+}
+#cajaCondenados{
+    float: left;
+    padding: 20px;
+    width: 200px;    
+}
+#cajaCondenados h3{
+    cursor: pointer;
+}
+#cajaEncarcelados{
+    float: left;
+    padding: 20px;
+    width: 200px;
+    cursor: pointer;
+}
+#leyenda{
+    position: relative;
+    padding-top: 160px;
+    width:70px;
+    height: 200px;
+    float: left;
+    font-size: .9em;
+    text-align:center;
+    left: 80px;
+}
+#cajaTextoLeyenda{
+    float: left;
+    width: 50px;
+}
+#colorLeyenda{
+    float: left;
+    width: 20px;
+}
+#leyenda:hover{
+    cursor: pointer;   
+}
+.menosQuince{
+    float: left;
+    background-color: #E2B084;
+    width: 20px;
+    height: 20px;
+}
+.menosTreinta{
+    float: left;
+    background-color: #D18242;
+    width: 20px;
+    height: 20px;
+}
+.menosCuarentayCinco{
+    float: left;
+    background-color: #AF5E1E;
+    width: 20px;
+    height: 20px;
+}
+.menosSesenta{
+    float: left;
+    background-color: #954119;
+    width: 20px;
+    height: 20px;
+}
+
+.masSesenta{
+    float: left;
+    background-color: #5A3015;
+    width: 20px;
+    height: 20px;
+}
+.textoLeyenda{
+    float: right;
+    // padding-top: 6px;
+    width: 50px;
+
+}
+.icons{
+    padding-bottom: 15px;    
+}
+.info{
+    background: url(img/logo_inf.png);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    padding:3px 0 15px 23px;
+    margin-right: 20px;    
+}
+.enlace{
+    background: url(img/logo_enl.png);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    padding:3px 0 15px 23px;
+    margin-right: 20px;    
+}
+.pdf{
+    background: url(img/logo_pdf.png);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    padding:3px 0 15px 23px;
+    margin-right: 20px;    
+}

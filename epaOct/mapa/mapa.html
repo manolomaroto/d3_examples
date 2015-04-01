@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+/* Author(s) = Manuel Maroto (@manuelgmaroto), Luis Sevillano (@SepirData)
+ * Date: 2014 Oct
+ */
+-->
+<html>
+    <head>
+        <title>Evolución Paro</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <script src="../d3/d3.js" type="text/javascript"></script>
+        <link href="../css/mapa.css" rel="stylesheet" type="text/css"/>
+        <!--<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>-->
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>EVOLUCIÓN HISTÓRICA DE LA TASA DE PARO POR PROVINCIAS</h1>
+            <div class="datosMapa">
+                <div id="cajaDatos">
+                    <div id="tasa-parados">
+                        <div id="tasa"></div>
+                        <div id="year"></div>
+                    </div>
+                    <div id="maxMin">
+                        <div id="mediaParo"></div>
+                        <div class="mediaNacional">media nacional</div>
+                        <div id="icono">
+                            <div id="maximoParo"></div>
+                            <div class="iconoMaximo"></div>
+                        </div>
+                        <div id="icono">
+                            <div id="minimoParo"></div>
+                            <div class="iconoMinimo"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="mapas">
+                    <div id="mapa"></div>
+                    <div id="canarias"></div>
+                </div>
+                <div id="leyenda" >
+                    <div class="masCinco"></div>
+                    <div class="masQuince"></div>
+                    <div class="masVeinticinco"></div>
+                    <div class="masTreintaYCinco"></div>
+                    <div class="masCuarenta"></div>
+                    <div class="textoLeyenda">0-10</div>
+                    <div class="textoLeyenda">10-20</div>
+                    <div class="textoLeyenda">20-30</div>
+                    <div class="textoLeyenda">30-40</div>
+                    <div class="textoLeyenda">+40</div>
+                </div>
+            </div>
+            <div id="cajaSlider">
+                <div class="mano"></div>
+                <form>
+                    <input type="range"  id="control" min="0" max="2" >
+                </form>
+                <div class="inicio">2005</div>
+                <div class="final">2014</div>
+            </div>
+            <div id="rangoFechas" class="rangoFechas"></div>
+            <div id="contenedorGrafico"></div>
+            <div id="contenedor">
+                <script src="../js/mapa.js" type="text/javascript"></script>
+            </div>
+        </div>
+    </body>
+</html>

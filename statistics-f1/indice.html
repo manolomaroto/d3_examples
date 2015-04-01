@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+Autor=manolo maroto
+Fecha=09-sep-2014
+Version=1.0
+Licencia=GPL v3
+Descripcion= index of the statisticsf1 webside
+-->
+<html>
+    <head>
+        <title>Statistics d3.f1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="js/sankey.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/statisticsf1.css">
+    </head>
+    <body>
+        <div id="wrapper">
+        <!--start of wrapper div-->
+        <header>
+            <div class="name">Statistics d3.f1</div>
+        </header>
+        
+        <nav>
+            <ul id="mainNav">
+                <li><a href="season2013.html">2013</a></li>
+            </ul>
+        </nav>
+        
+        <section>
+            <p id="explanation">This chart shows the results of the four worlds championsip that has won Vettel. At the left
+            there are four rectangules that represents the total of points of the six principals formula 1 teams
+            in 2010, 2011, 2012 and 2013. In the middle there are six rectangules, one for each team that has finished
+            in the five firsts position in any of the four seasons representated. Actually it should be just five
+            teams but I think that is more representative to show Renault and Lotus as diferent teams. Finally 
+            at the right of the chart we have all the drivers that has partifipated with these teams and the total
+            of points that has won for each team. Just one more thing, you can drag the rectangules of each type and
+            put them all together. Enjoy.
+            </p>
+            <script type="text/javascript" src="js/sankeyf1.js"></script>
+        </section>
+        
+        <footer>
+            <div id="contact"><a href="https://twitter.com/intent/tweet?screen_name=manuelgmaroto" class="twitter-mention-button" data-size="large" data-related="manuelgmaroto" data-dnt="true">Tweet to @manuelgmaroto</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></div>
+        </footer>
+        
+        </div>
+        <!--end of wrapper div-->
+    </body>
+</html>

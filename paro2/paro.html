@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Evolución Paro</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <script src="d3/d3.min.js" charset="utf-8"></script>
+        <script src="d3/d3.js" type="text/javascript"></script>
+        <link href="css/complet.css" rel="stylesheet" type="text/css"/>        
+        <!--<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>-->
+    </head>
+    <body>
+        <div id="wrapper">
+
+
+            <div id="rangoFechas" class="rangoFechas"></div>
+            <div id="contenedorGrafico"></div>
+            <div id="contenedor">
+                <b>Datos por sectores</b><br/>
+                <div id="mes"></div>
+                <div id="donut"></div>
+            </div>
+            <div id="selector">
+                <b>Interanual</b><br/>
+                <i>Cifras en millones</i><br/>
+                <div class="select-style">
+                    <select  id="select" onchange="update(this.value);">
+                        <option value="Enero">Enero</option>
+                        <option value="Febrero">Febrero</option>
+                        <option value="Marzo">Marzo</option>
+                        <option value="Abril">Abril</option>
+                        <option value="Mayo">Mayo</option>
+                        <option value="Junio">Junio</option>
+                        <option value="Julio">Julio</option>
+                        <option value="Agosto">Agosto</option>
+                        <option value="Septiembre">Septiembre</option>
+                        <option value="Octubre">Octubre</option>
+                        <option value="Noviembre">Noviembre</option>
+                        <option value="Diciembre">Diciembre</option>
+                    </select>
+                </div>
+                <div id="barras"></div>
+            </div>
+            <script src="JS/codigoParo.js"></script>
+        </div>
+    </body>
+</html>

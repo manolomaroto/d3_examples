@@ -1,0 +1,488 @@
+
+/* 
+    Created on : 19-may-2014, 6:43:43
+    Author(s)     : Manuel Maroto, Luis Sevillano 
+*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+b{font-weight: bold;font-size: 1em;}
+i{font-style: italic;}
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #777;
+
+}
+
+#wrapper{
+    width: 990px;
+    font-size: 1em;
+    margin: 10px;
+}
+
+div.tooltip{
+    position: absolute;
+    text-align: center;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    font: 13px sans-serif;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    pointer-events: none;
+    line-height: 14px;
+    z-index: 2;
+}
+
+.area{
+    fill: #C6DBEF;
+}
+
+.rangoFechas{
+    color: #555;
+    font-size: 12px;
+}
+.rangoFechas i{
+    font-size: 14px;
+}
+b{
+    font-size: 1.5em;
+}
+#mes{
+    width: 10em;
+}
+#mes i{
+    font-size: 14px;
+    color: #555;
+}
+.legend {
+    line-height: 18px;
+    color: #555;
+    width: 11em;
+    margin-top: 20px;
+    float: left;
+}
+.legend i {
+    width: 1.1em;
+    height: 1.1em;
+    float: left;
+    margin-right: 0.4em;
+}
+.legend b{
+    font-size: 1em;
+    float: right;
+
+}
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #777;
+    shape-rendering: crispEdges;
+}
+.axis text {
+    font-size: 11px;
+    fill: #777;
+}
+
+.barr{
+    fill:#777;
+}
+
+.tooltip {
+    opacity: 0;
+    position: absolute;
+    width: auto;
+    height: auto;
+    margin: 20px;
+    background-color: white;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
+.tooltip.hidden {
+    display: none;
+}
+.tooltip b{
+    font-size: 15px;
+}
+.tooltip span{
+    font-size: 14px;
+}
+.tooltip p {
+    margin: 0;
+    font-family: sans-serif;
+    line-height: 15px;
+}
+
+#contenedor{
+    float: left;
+}
+#contenedorGrafico{
+    cursor: pointer;
+    //border: 1px solid black;
+    float: left;
+
+    margin-top: 10px;
+
+}
+.grid{
+    stroke: black;
+    stroke-width:1px;
+    opacity: 0.3;
+    pointer-events: none;
+}
+.grid .tick {
+    opacity: 1;
+    stroke-width: 1px;
+}
+
+#selector{
+    //border: 1px solid black;
+    float: left;
+    width: 430px;
+    height: 310px;
+    margin-top: 15px;
+}
+#selector i{
+    font-size: 14px;
+    color: #555;
+}
+#selector .grid{
+    opacity: 0.7;
+    stroke-width: 0.3;
+}
+
+polyline{
+    opacity: .3;
+    stroke: black;
+    stroke-width: 2px;
+    fill: none;
+}
+path.slice{
+    stroke: white;
+    stroke-width: 1;
+    cursor: pointer;
+}
+#contenedor{
+    //border: 1px solid black;
+    float: left;
+    margin-top: 15px;
+    width: 520px;
+    height: 310px;
+}
+#donut svg{
+    //padding-left: 160px;
+    padding-top: 10px;
+}
+#donut{
+    margin-top: 10px;
+    font-size: 13px;
+}
+.total{
+    font-size: 16px;
+    font-weight: bold;
+    color:#777;
+}
+.label{
+    fill: #848484;
+    font-size: 11px;
+    font-weight: bold;
+}
+.units{
+    fill: gray;
+    font-size: 12px;
+}
+.inicial{
+
+}
+
+/*Estilos para chrome del slider*/
+input[type='range'] {
+    -webkit-appearance: none !important;
+    background:#6BAED6;
+    margin-top: 20px;
+    margin-left: 60px;
+    height:20px;
+    width: 650px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background:#2881BA;
+    height:20px;
+    width:20px;
+}
+/*Estilos para firefox del slider*/
+input[type='range']::-moz-range-thumb{
+
+    background:#6BAED6;
+    height:20px;
+    width:20px;
+}
+
+input[type='range']::-moz-range-track{
+
+    background:#2881BA;
+    height:20px;
+    width: 650px;
+}
+.path:hover{
+    opacity: 0.9;
+
+}
+
+div b{
+    font-size: 14px;
+}
+
+
+/*Estilos para chrome del slider*/
+input[type='range'] {
+    -webkit-appearance: none !important;
+    background:#777;
+
+    margin: 15px 5px 10px 5px;
+    height:5px;
+    width: 930px;
+}
+input[type='range']:focus {
+    outline: 0;
+}
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background:#fff;
+    height:20px;
+    width:20px;
+    border-radius: 20px;
+    border: 1px solid #777;
+}
+input[type='range']::-webkit-slider-thumb:focus {
+    outline: 0;
+}
+/*Estilos para firefox del slider*/
+input[type='range']::-moz-range-thumb{
+    background:#fff;
+    height:20px;
+    width:20px;
+    border-radius: 20px;
+
+}
+input[type='range']::-moz-range-thumb:focus{
+    outline: 0;
+}
+
+input[type='range']::-moz-range-track:focus{
+    outline:0;
+}
+input[type='range']::-moz-range-track{
+    background:#777;
+    height:5px;
+    width: 930px;
+
+}
+#cajaDatos{
+    float: left;
+    width: 200px;
+}
+#tasa{
+    font-size: 20px;
+    float:left;
+    height: 10px;
+    width: 200px;
+    padding: 50px 0 0 0;
+
+}
+#tasa-parados{
+    //float:left;
+}
+#year{
+    float:left;
+    font-size: 3em;
+    padding: 10px 0;
+    width: 300px;
+    border-bottom: #777 1px solid;
+}
+
+#maxMin{    
+    float: left;
+    width: 250px;
+
+    //border: solid 2px graytext;
+
+}
+#mediaParo{
+    margin-top: 20px;
+    float: left;
+    width: 300px;
+    font-size: 2em;
+}
+
+.mediaNacional{
+    margin-bottom: 20px;
+    border-bottom: solid 1px #777;
+    width: 300px;
+}
+
+#maximoParo{
+    font-size: 2em;
+
+    padding-top: 20px;
+    float:right;
+
+
+}
+#minimoParo{
+    margin-top: 20px;
+    float:right;
+
+    font-size: 2em;
+}
+
+#icono{
+    float: left;
+}
+
+.iconoMaximo{
+    height: 40px;
+    width: 40px;
+
+    float: right;
+    margin: 20px 10px 0 0;
+    background: url(IMG/iconos.png)-97px 100px;
+}
+
+.iconoMinimo{
+    height: 40px;
+    width: 40px;
+    background: url(IMG/iconos.png)-176px 100px;
+    float: right;
+    margin: 20px 10px 0 0;
+}
+
+.mano{
+    width: 40px;
+    height: 40px;
+    background: url(IMG/iconos.png)-250px 100px;
+    float:left
+}
+
+
+
+
+#control{
+    margin-top: 10px; 
+    float: right;
+}
+.inicio{
+    float: left;
+    font-size: .7em;
+}
+
+.final{
+    float:right;
+    font-size: .7em;
+}
+.c_group{
+    cursor: pointer;
+}
+#barras rect{
+    cursor: pointer;
+}
+
+
+#leyenda{
+
+    display: inline-block;
+    width: 350px;
+    height: 40px;
+    font-size: .9em;
+    text-align:center;
+    padding: 10px 10px 10px 0;
+    margin-top: 80px;
+}
+.masCinco{
+    float: left;
+    background-color: #c6dcf1;
+    width: 70px;
+    height: 20px;
+}
+.masQuince{
+    float: left;
+    background-color: #a6badb;
+    width: 70px;
+    height: 20px;
+}
+.masVeinticinco{
+    float: left;
+    background-color: #78a8d0;
+    width: 70px;
+    height: 20px;
+}
+.masTreintaYCinco{
+    float: left;
+    background-color: #5193c5;
+    width: 70px;
+    height: 20px;
+}
+.masCuarenta{
+    float: left;
+    background-color: #2582bd;
+    width: 70px;
+    height: 20px;
+}
+.textoLeyenda{
+    float: left;
+    padding: 5px 17px;
+}//fin estilos leyenda
+div.datosMapa{
+    overflow: hidden;
+}
+#mapas{
+    float: right;
+    width: 600px;
+    height: 500px;
+    // border: solid 2px graytext;
+}
+#canarias {
+    //float: right;
+    height: 100px;
+    width: 260px;
+    top: -110px;
+    left: 345px;
+    position: relative;
+    border-top: solid 1px graytext;
+    border-left: solid 1px graytext;
+    border-radius: 30px 0;
+
+}
+/* ------------------------------SELECT------------- */
+.select-style {
+    float: right;
+    border: 1px solid #ccc;
+    width: 110px;
+    border-radius: 2px;
+    overflow: hidden;
+    background: #fafafa url("../img/arrow-up.png") no-repeat 90% 50%;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+}
+.select-style select:focus {
+    outline: none;    
+    background: #fafafa url("../img/arrow-down.png") no-repeat 90% 50%;
+    width: 110px;
+}
+.select-style select {
+    padding: 2px 7px 2px 7px;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+}
+-select-style option:onclick{
+    background: #fafafa url("../img/arrow-up.png") no-repeat 90% 50%;
+}
